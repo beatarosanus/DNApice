@@ -8,15 +8,15 @@ class CorpoHumano:
         self.volume_sanguineo = 5.0
         self.temperatura_corpo = 36.5
 
-    def bioma_atual(self, bioma_atual):
-        if bioma == "deserto":
+    def suar(self, bioma_atual):
+        if bioma_atual == "deserto":
             print(f"\n[{self.nome}] Entrou no Deserto (Calor)")
             self.temperatura_corpo = 39.0  
             self.hidratação -= 25.0        
             self.pressao_arterial -= 10.0  
             
-        elif bioma in ["tundra", "taiga"]:
-            print(f"\n[{self.nome}] Entrou no bioma {bioma} - (Frio Extremo!)")
+        elif bioma_atual in ["tundra", "taiga"]:
+            print(f"\n[{self.nome}] Entrou no bioma {bioma_atual} - (Frio Extremo!)")
             self.temperatura_corpo = 35.0 
             self.pressao_arterial = 140.0  #vasoconstrição
             self.volume_sanguineo = 5.2    
