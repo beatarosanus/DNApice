@@ -58,22 +58,27 @@ def suar(self):
 
 def urinar(self):
     if self.bioma_atual == "deserto":
-            if self.hidratacao <= 90.0:
+        try:
+            base = (input("Informe a tempeperatura atual do deserto (°C):"))
+            if base >= 30.0:
+               self.hidratacao -= 05.0
                self.volume_ml = 300.0
                self.concentracao = "Diluída"
                print(f"[{self.nome}], sua hidratação está moderada")
                print(f"STATUS: Voce urinou cerca de {self.volume_ml}ml --- Sua concentração: {self.concentracao} ")
-            elif self.hidratacao <= 82.0:
+            elif base >= 40.0:
+                 self.hidratacao -= 12.0:
                  self.volume_ml = 150.0
                  self.concentracao = "Moderada"
                  print(f"[{self.nome}],Atenção: Hidratação baixa. Urina muito concentrada. ")
                  print(f"STATUS:Voce urinou cerca de {self.volume.ml}ml --- Sua concentração: {self.concentracao}")
-            elif self.hidratacao <= 75.0:
+            elif base >= 50.0:
+                self.hidratacao -= 25.0
                 self.volume_ml = 50.0
                 self.concentracao = "Concentrada"
                 print(f"[{self.nome}] Hidratação crítica! Rins em retenção máxima.")
                 print(f"STATUS(FIQUE ATENTO!!!) Voce urinou cerca de {self.volume_ml}ml --- Sua concentração: {self.concetracao}")
-            elif self.hidracao < 74.0:
+            if self.hidracao < 74.0:
                 self.volume_ml = 0.0
                 print(f"[{self.nome}] CUIDADO! Hidratação em {self.hidratacao}% (abaixo de 75%).")
                 print("STATUS: Impossível urinar! Voce está passando por uma supressão da produção de urina(anúria) devido ao calor intenso e falta de hidratação. O corpo bloqueou a excreção para reter cada gota de água.")
@@ -117,6 +122,11 @@ def urinar(self):
     
 
     elif self.bioma_atual == "Taiga":
+         base = float(input("Informe a temperatura atual da Taiga (°C):" ))
+        if base <= -30:
+            self.hidratacao -= 20.0
+            self.volume_ml
+            
 
         print(f"Status -> Temp: {self.temperatura_corpo}°C | Hidratação: {self.hidratacao}%\n")
         
