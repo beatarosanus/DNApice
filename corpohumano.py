@@ -367,6 +367,10 @@ class CorpoHumano:
             print("Erro: Por favor, insira um número válido para a temperatura.")
 
 
+
+
+
+
         
         
 
