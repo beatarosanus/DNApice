@@ -34,6 +34,13 @@ def suar(self):
                     self.pressao_arterial = 120.0
                     print(f"[{self.nome}] Calor forte! Temperatura corporal: {self.temperatura_corpo}°C | Pressão: {self.pressao_arterial}")
 
+                elif temp <= 10.0:
+                self.hidratacao -= 4.0
+                self.volume_ml = 250.0
+                self.concentracao = "Normal"
+                print(f"[{self.nome}] Noite fria no Deserto! O corpo retém um pouco mais de calor.")
+                print(f"STATUS: Você urinou cerca de {self.volume_ml}ml --- Sua concentração: {self.concentracao}")
+
                 else:
                     self.temperatura_corpo = 36.5
                     self.hidratacao -= 2.0
@@ -310,6 +317,68 @@ def urinar(self):
             
 
         print(f"Status -> Temp: {self.temperatura_corpo}°C | Hidratação: {self.hidratacao}%\n")
+
+def correr(self):
+        try:
+            if self.bioma_atual in ["deserto", "saara"]:
+                temp = float(input("Informe a temperatura atual do Deserto/Saara para a corrida (°C): "))
+                
+                if temp >= 45.0:
+                    self.hidratacao -= 25.0
+                    self.temperatura_corpo = 40.5
+                    self.saturacao_oxigenio -= 5.0
+                    self.pressao_arterial = 95.0
+                    print(f"[{self.nome}] 🚨 CORRIDA EXTREMA NO CALOR! Exaustão térmica iminente.")
+                    print(f"STATUS -> Temp Corporal: {self.temperatura_corpo}°C | Hidratação: {self.hidratacao}% | Pressão: {self.pressao_arterial}")
+                    
+                elif temp >= 30.0:
+                    self.hidratacao -= 15.0
+                    self.temperatura_corpo = 39.0
+                    self.saturacao_oxigenio -= 3.0
+                    self.pressao_arterial = 105.0
+                    print(f"[{self.nome}] Corrida intensa sob sol forte. Suor excessivo e perda rápida de líquidos.")
+                    print(f"STATUS -> Temp Corporal: {self.temperatura_corpo}°C | Hidratação: {self.hidratacao}%")
+                    
+                else:
+                    self.hidratacao -= 8.0
+                    self.temperatura_corpo = 37.8
+                    print(f"[{self.nome}] Corrida no deserto com temperatura amena. Ritmo controlado.")
+                    print(f"STATUS -> Hidratação: {self.hidratacao}%")
+                        
+            elif self.bioma_atual == "tundra":
+                temp = float(input("Informe a temperatura atual da Tundra para a corrida (°C): "))
+                
+                if temp <= -20.0:
+                    self.hidratacao -= 12.0
+                    self.temperatura_corpo = 36.0  # O esforço ajuda a combater o frio, mas a respiração gasta água
+                    self.pressao_arterial = 135.0
+                    print(f"[{self.nome}] ❄️ Corrida no gelo extremo! Ar congelante queimando os pulmões.")
+                    print(f"STATUS -> Temp Corporal: {self.temperatura_corpo}°C | Hidratação: {self.hidratacao}% | Pressão: {self.pressao_arterial}")
+                else:
+                    self.hidratacao -= 7.0
+                    self.temperatura_corpo = 36.8
+                    print(f"[{self.nome}] Corrida na Tundra com frio moderado. O corpo aquece bem com o movimento.")
+                    print(f"STATUS -> Hidratação: {self.hidratacao}%")
+
+            elif self.bioma_atual == "taiga":
+                temp = float(input("Informe a temperatura atual da Taiga para a corrida (°C): "))
+                
+                if temp <= -10.0:
+                    self.hidratacao -= 10.0
+                    self.pressao_arterial = 130.0
+                    print(f"[{self.nome}] 🌲 Corrida na Taiga congelante. Vasoconstrição e esforço pulmonar alto.")
+                    print(f"STATUS -> Hidratação: {self.hidratacao}% | Pressão: {self.pressao_arterial}")
+                else:
+                    self.hidratacao -= 6.0
+                    print(f"[{self.nome}] Corrida na Taiga com clima estável. Bom desempenho físico.")
+                    print(f"STATUS -> Hidratação: {self.hidratacao}%")
+
+            else:
+                print(f"[{self.nome}] Nenhum bioma compatúvel definido para a corrida.")
+
+        except ValueError:
+            print("Erro: Por favor, insira um número válido para a temperatura.")
+
 
 
         
