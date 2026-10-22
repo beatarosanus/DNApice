@@ -2,7 +2,7 @@ from bioma import Bioma
 
 
 class Deserto(Bioma):
-    def __init__(self, estacao, umidade, temperatura,
+    def __init__(self, umidade, temperatura,
                  amplitude_termica):
 
         super().__init__(
@@ -10,7 +10,6 @@ class Deserto(Bioma):
             "Cactos e arbustos",
             "Árido",
             "Répteis e roedores",
-            estacao,
             umidade,
             temperatura
         )
