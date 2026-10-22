@@ -1,17 +1,18 @@
 from bioma import Bioma
 
 
-class Taiga(Bioma):
+class Tundra(Bioma):
     def __init__(self, umidade, temperatura,
-                 temperatura_media):
+                 altitude, velocidade_vento):
 
         super().__init__(
-            "Taiga",
-            "Coníferas",
-            "Frio e subártico",
-            "Alces e ursos",
+            "Tundra",
+            "Musgos e líquens",
+            "Polar",
+            "Renas e raposas-do-ártico",
             umidade,
             temperatura
         )
 
-        self.temperatura_media = temperatura_media
+        self.altitude = altitude
+        self.velocidade_vento = velocidade_vento
