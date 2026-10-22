@@ -1,12 +1,11 @@
 class Bioma:
     def __init__(self, nome, flora, clima, fauna,
-                 estacao, umidade, temperatura):
+                 umidade, temperatura):
 
         self.nome = nome
         self.flora = flora
         self.clima = clima
         self.fauna = fauna
-        self.estacao = estacao
         self.umidade = umidade
         self.temperatura = temperatura
 
