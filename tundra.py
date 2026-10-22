@@ -2,7 +2,7 @@ from bioma import Bioma
 
 
 class Tundra(Bioma):
-    def __init__(self, estacao, umidade, temperatura,
+    def __init__(self, umidade, temperatura,
                  altitude, velocidade_vento):
 
         super().__init__(
@@ -10,7 +10,6 @@ class Tundra(Bioma):
             "Musgos e líquens",
             "Polar",
             "Renas e raposas-do-ártico",
-            estacao,
             umidade,
             temperatura
         )
