@@ -2,7 +2,7 @@ from bioma import Bioma
 
 
 class Taiga(Bioma):
-    def __init__(self, estacao, umidade, temperatura,
+    def __init__(self, umidade, temperatura,
                  temperatura_media):
 
         super().__init__(
@@ -10,7 +10,6 @@ class Taiga(Bioma):
             "Coníferas",
             "Frio e subártico",
             "Alces e ursos",
-            estacao,
             umidade,
             temperatura
         )
